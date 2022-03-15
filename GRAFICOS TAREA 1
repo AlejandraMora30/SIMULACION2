@@ -23,7 +23,7 @@
     "def pi_graf(x,y):\n",
     "    L=[]\n",
     "    fig = plt.figure(1, figsize=(8, 8))        # Aquí fijamos el formato de la gráfica para que sea cuadrada.\n",
-    "    plt.plot(x,y, color=\"red\", markersize=1) \n",
+    "    plt.plot(x,y, color=\"green\", markersize=1) \n",
     "    plt.scatter(x_1, y_1, s=20, c=\"blue\")\n",
     "    L.append(x,y)\n",
     "    plt.title(\"Estimación de $\\pi$\")\n",
