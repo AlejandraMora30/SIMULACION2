@@ -1,0 +1,82 @@
+{
+  "nbformat": 4,
+  "nbformat_minor": 0,
+  "metadata": {
+    "colab": {
+      "name": "La_Aguja_de_Buffon_JRA.ipynb",
+      "provenance": []
+    },
+    "kernelspec": {
+      "name": "python3",
+      "display_name": "Python 3"
+    },
+    "language_info": {
+      "name": "python"
+    }
+  },
+  "cells": [
+    {
+      "cell_type": "code",
+      "source": [
+        "import random   \n",
+        "import math"
+      ],
+      "metadata": {
+        "id": "_11icmpXBEZ0"
+      },
+      "execution_count": 8,
+      "outputs": []
+    },
+    {
+      "cell_type": "code",
+      "source": [
+        "n = 150000000                                                                          # \"n\" representa el numero de agujas que vamos a lanzar\n",
+        "\n",
+        "sc = 0\n",
+        "nc = 0\n",
+        "\n",
+        "for i in range(n):\n",
+        "\n",
+        "  x = random.random()                                                            # Aqui representamos la cordenada \"x\" de nuestro punto\n",
+        "  a = random.uniform(0,180)                                                      # Aqui representamos el angulo con el que va a caer nuestra aguja\n",
+        "\n",
+        "  c = math.cos(a)\n",
+        "\n",
+        "  dis = 0.5 * c\n",
+        "\n",
+        "\n",
+        "  if (dis<=x and dis<=1-x):\n",
+        "    nc = nc + 1\n",
+        "\n",
+        "  else:\n",
+        "    sc = sc+1\n",
+        "\n",
+        "p = (n)/sc\n",
+        "\n",
+        "print(\"Toca la linea \", sc, \" veces\", end='\\n')\n",
+        "print(\"NO toca la linea \", nc, \" veces\", end='\\n')\n",
+        "\n",
+        "print(\"El valor de pi es: \", p)"
+      ],
+      "metadata": {
+        "colab": {
+          "base_uri": "https://localhost:8080/"
+        },
+        "id": "uMoaHWidA0tk",
+        "outputId": "f45b1480-06fe-457b-bbf1-7d941d94d7f6"
+      },
+      "execution_count": 69,
+      "outputs": [
+        {
+          "output_type": "stream",
+          "name": "stdout",
+          "text": [
+            "Toca la linea  47497865  veces\n",
+            "NO toca la linea  102502135  veces\n",
+            "El valor de pi es:  3.158036682280351\n"
+          ]
+        }
+      ]
+    }
+  ]
+}
